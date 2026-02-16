@@ -1,52 +1,64 @@
-
-# NOTE: This is for me not to forget wtf I was doing
-
-
 # Shared Dotfiles
 
-This repository contains my custom configuration overrides for Omarchy / Arch Linux.
+Running the same Arch / Omarchy setup on multiple machines leads to config drift.
 
-The goal is to keep multiple machines in sync using a single source of truth.
+This repo solves it with a simple approach:
 
----
-# How It Works
+- Real configs live here
+- `~/.config` is symlinked to this repo
+- Git is used to sync changes across machines
 
-The repository acts as the **single source of truth**.
+Two scripts:
 
-Each machine:
-~/.config/hypr → ~/shared-dotfiles/.config/hypr
-So when configs are updated in the repo and pushed, pulling on another machine updates everything automatically.
-
-Workflow:
-
-1. Edit config
-2. `git add .`
-3. `git commit`
-4. `git push`
-5. On other machine → `git pull`
-
-Done.
+- `setup-dotfiles.sh` → migrate first machine (move + link)
+- `link-dotfiles.sh` → link additional machines (link only)
 
 ---
 
-# Setup On a New Machine
-## 1. Clone the repo
+# First Machine (Migration)
 
+```bash
 git clone git@github.com:dhdimchev/shared-dotfiles.git ~/shared-dotfiles
 cd ~/shared-dotfiles
-
-## 2. Run setup script
 chmod +x setup-dotfiles.sh
 ./setup-dotfiles.sh
+```
 
+Commit and push after migration.
 
-The script will:
+---
 
-Move existing selected config folders into the repo (if needed)
+# Additional Machines
 
-Create symlinks from ~/.config to the repo
+```bash
+git clone git@github.com:dhdimchev/shared-dotfiles.git ~/shared-dotfiles
+cd ~/shared-dotfiles
+chmod +x link-dotfiles.sh
+./link-dotfiles.sh
+```
 
-Skip folders already linked
+---
 
+# Daily Sync
 
+On machine where changes are made:
 
+```bash
+cd ~/shared-dotfiles
+git add .
+git commit -m "update"
+git push
+```
+
+On other machines:
+
+```bash
+cd ~/shared-dotfiles
+git pull
+```
+
+Reload Hyprland if needed.
+
+---
+
+If you find this useful, feel free to use it.
