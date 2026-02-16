@@ -8,13 +8,10 @@ This repository contains my custom configuration overrides for Omarchy / Arch Li
 
 The goal is to keep multiple machines in sync using a single source of truth.
 
-Only intentional custom configs are version-controlled.
-No browser data. No app state. No machine-specific junk.
-
 ---
 
 # Structure
-
+```
 shared-dotfiles/
 │
 ├── .config/
@@ -25,7 +22,7 @@ shared-dotfiles/
 │ └── ...
 │
 └── setup-dotfiles.sh
-
+```
 `.config/` contains the real config files.
 
 `~/.config/` on each machine contains symlinks pointing to these files.
