@@ -9,26 +9,6 @@ This repository contains my custom configuration overrides for Omarchy / Arch Li
 The goal is to keep multiple machines in sync using a single source of truth.
 
 ---
-
-# Structure
-```
-shared-dotfiles/
-│
-├── .config/
-│ ├── hypr/
-│ ├── waybar/
-│ ├── omarchy/
-│ ├── nvim/
-│ └── ...
-│
-└── setup-dotfiles.sh
-```
-`.config/` contains the real config files.
-
-`~/.config/` on each machine contains symlinks pointing to these files.
-
----
-
 # How It Works
 
 The repository acts as the **single source of truth**.
