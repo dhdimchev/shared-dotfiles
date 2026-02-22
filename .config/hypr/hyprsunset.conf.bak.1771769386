@@ -5,9 +5,7 @@ profile {
     identity = true
 }
 
-# To enable auto switch to nightlight, set in your .config/hypr/autostart:
-# exec-once = uwsm app -- hyprsunset
-# and use the following:
+# Enable auto switch to nightlight:
 # profile {
 #     time = 20:00
 #     temperature = 4000

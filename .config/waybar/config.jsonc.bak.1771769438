@@ -51,14 +51,13 @@
     "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
     "tooltip-format": "Omarchy update available",
     "signal": 7,
-    "interval": 21600
+    "interval": 3600
   },
 
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "omarchy-launch-or-focus-tui btop",
-    "on-click-right": "alacritty"
+    "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "clock": {
     "format": "{:L%A %H:%M}",
@@ -100,8 +99,8 @@
   },
   "bluetooth": {
     "format": "",
-    "format-off": "󰂲",
     "format-disabled": "󰂲",
+    "format-off": "󰂲",
     "format-connected": "󰂱",
     "format-no-controller": "",
     "tooltip-format": "Devices connected: {num_connections}",
@@ -129,11 +128,7 @@
   },
   "custom/expand-icon": {
     "format": "",
-    "tooltip": false,
-    "on-scroll-up": "",
-    "on-scroll-down": "",
-    "on-scroll-left": "",
-    "on-scroll-right": ""
+    "tooltip": false
   },
   "custom/screenrecording-indicator": {
     "on-click": "omarchy-cmd-screenrecord",

@@ -65,7 +65,7 @@ tooltip {
 }
 
 #clock {
-  margin-left: 8.75px;
+  margin-left: 5px;
 }
 
 .hidden {
