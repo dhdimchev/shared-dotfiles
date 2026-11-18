@@ -77,3 +77,8 @@ o.window("com.mitchellh.ghostty", { scroll_touchpad = 0.2 })
 -- Optional three-finger workspace gesture:
 -- hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 --
+
+-- Focus follows mouse everywhere, including JetBrains IDEs (Omarchy disables
+-- hover focus for them by default because of popup quirks; this undoes that).
+hl.config({ input = { follow_mouse = 1 } })
+o.window("^(jetbrains-.*)$", { no_follow_mouse = false })
