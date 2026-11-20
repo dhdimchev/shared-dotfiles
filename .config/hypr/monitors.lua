@@ -13,10 +13,10 @@ hl.monitor({ output = "", mode = "preferred", position = "auto", scale = omarchy
 -- Portrait/rotated secondary monitor (transform: 1 = 90°, 3 = 270°).
 -- hl.monitor({ output = "DP-2", mode = "preferred", position = "auto", scale = 1, transform = 1 })
 
--- Monitor layout
-hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = 2 })
-hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto", scale = 1, transform = 3 })
-hl.monitor({ output = "DP-1", mode = "preferred", position = "auto", scale = 1 })
+-- Monitor layout, left to right: HDMI (portrait, ws1) - DP (ws2) - laptop (ws3)
+hl.monitor({ output = "eDP-1", mode = "preferred", position = "3000x0", scale = 2 })
+hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "0x0", scale = 1, transform = 3 })
+hl.monitor({ output = "DP-1", mode = "preferred", position = "1080x0", scale = 1 })
 
 -- Workspace assignments
 hl.workspace_rule({ workspace = "1", monitor = "HDMI-A-1" })
